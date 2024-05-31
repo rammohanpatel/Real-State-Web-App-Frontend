@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove your custom CSS for the marquee effect */
+
+.maylike-products-wrapper {
+    margin-top: 120px;
+    overflow: hidden;
+  }
+  
+  .maylike-products-wrapper h2 {
+    text-align: center;
+    margin: 50px;
+    color: #324d67;
+    font-size: 28px;
+  }
+  
+  .maylike-products-container {
+    display: flex;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    gap: 15px;
+    padding-bottom: 20px; 
+  }
+  
+  .marquee-container {
+    overflow: hidden;
+  }
+  
+  .marquee {
+    display: flex;
+    animation: marquee-scroll 20s linear infinite;
+  }
+  
+  .marquee-item {
+    flex: 0 0 auto; /* Ensure fixed width for each card */
+    width: 300px; 
+  } 
+  
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  
+
