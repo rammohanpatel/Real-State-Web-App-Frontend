@@ -16,6 +16,8 @@ export default function Page() {
         const query = `*[_type=='insight'] | order(_createdAt asc) {
           title,
           image,
+          tagType,
+          publishDate,
           summary,
           "slug": slug.current,
           body

@@ -32,7 +32,7 @@ export default async function page({ params: { slug } }) {
   return (
     <article className="mt-12 mb-24 px-2 2xl:px-12 flex flex-col gap-y-8">
       {/* Blog Title */}
-      <h1 className="text-xl xs:text-3xl lg:text-5xl font-bold text-dark dark:text-light">
+      <h1 className="text-xl xs:text-3xl lg:text-5xl font-bold ">
         {person.name}
       </h1>
 
@@ -50,16 +50,16 @@ export default async function page({ params: { slug } }) {
       <h2 className="text-xl xs:text-2xl md:text-3xl font-bold uppercase text-accentDarkPrimary">
         Description
       </h2>
-      <div className="text-base md:text-xl leading-relaxed text-justify text-dark/80 dark:text-light/80">
+      <div className="text-base md:text-xl leading-relaxed text-justify ">
         <PortableText value={person.description} />
       </div>
       </section>
 
       {/* Main Body of Blog */}
-      <section className="text-lg leading-normal text-dark/80 dark:text-light/80
+      <section className="text-lg leading-normal 
       prose-h4:text-accentDarkPrimary prose-h4:text-3xl prose-h4:font-bold
       prose-li:list-disc prose-li:list-inside prose-li:marker:text-accentDarkSecondary
-      prose-strong:text-dark dark:prose-strong:text-white
+      prose-strong:text-dark 
       ">
         <PortableText 
         value={person.body} 

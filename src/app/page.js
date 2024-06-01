@@ -25,6 +25,8 @@ export default function Home() {
         const query = `*[_type=='post'] | order(_createdAt asc) {
           title,
           image,
+          tagType,
+          publishDate,
           featured,
           summary,
           "slug": slug.current,
@@ -34,6 +36,8 @@ export default function Home() {
         const insightQuery = `*[_type=='insight'] | order(_createdAt asc) {
           title,
           image,
+          tagType,
+          publishDate,
           featured,
           summary,
           "slug": slug.current,

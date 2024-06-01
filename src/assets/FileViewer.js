@@ -7,9 +7,7 @@ const FileViewer = ({ url }) => {
       return (
         <iframe
           src={`https://docs.google.com/gview?url=${url}&embedded=true`}
-          className="w-6/12 h-96"
-          
-          frameBorder="0"
+          className="w-full h-96"
         />
       );
     }

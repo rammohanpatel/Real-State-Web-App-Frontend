@@ -1,4 +1,3 @@
-
 'use client'
 
 import Navbar from "@/components/Navbar";
@@ -6,9 +5,9 @@ import { client } from '../../lib/client';
 import { useEffect, useState } from "react";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
+// import HeroImage from "@/components/HeroImage"; // Assuming you have a HeroImage component
 
 export default function Home() {
-
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -17,6 +16,8 @@ export default function Home() {
         const query = `*[_type=='post'] | order(_createdAt asc) {
           title,
           image,
+          tagType,
+          publishDate,
           summary,
           "slug": slug.current,
           body
@@ -32,22 +33,24 @@ export default function Home() {
     fetchData();
   }, []);
 
-  console.log('Blogs : ', blogs)
+  console.log('Blogs : ', blogs);
 
   return (
-    <div>
+    <div className="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50">
       <Navbar />
-      {/* Render fetched data */}
-      <div>
-        <section className="m-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {
-            blogs.map((blog, index) => (
-              <BlogCard blog={blog} key={index} />
-            ))
-          }
+      {/* <HeroImage /> */}
 
+      {/* Render fetched data */}
+      <div className="max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          {blogs.map((blog, index) => (
+            <div key={index} className="transform hover:scale-105  transition-transform duration-300">
+            <BlogCard blog={blog} key={index} className="transform hover:scale-105 transition-transform duration-300" />
+            </div>
+          ))}
         </section>
       </div>
+
       <Footer />
     </div>
   );

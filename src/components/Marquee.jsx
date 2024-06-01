@@ -6,7 +6,7 @@ import BlogCard from '@/components/BlogCard';
 const Marquee = ({ blogs }) => {
   return (
     <div className="maylike-products-wrapper">
-      <h2 className="text-xl font-semibold mb-4">You May Also Like</h2>
+      <h2 className="text-xl text-center font-semibold mb-4">You May Also Like</h2>
       <div className="marquee-container">
         <div className="marquee ">
           {blogs.map((blog, index) => (
