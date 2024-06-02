@@ -8,7 +8,7 @@ import { urlForImage } from '@/lib/image';
 const OurPeopleCard = ({ person }) => {
   return (
     <Link href={`/our-people/${person.slug}`} key={person._id}>
-      <div className="bg-white rounded-lg shadow-md p-6 my-6 text-center transform hover:scale-105  transition-transform duration-300">
+      <div className="bg-white h-[500px] rounded-lg shadow-md p-6 my-6 text-center transform hover:scale-105  transition-transform duration-300">
         {person.imageUrl && (
           <div className="w-48 h-48 mx-auto mb-4 relative">
             <Image

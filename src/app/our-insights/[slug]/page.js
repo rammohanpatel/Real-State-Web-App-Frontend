@@ -182,7 +182,7 @@ export default function Page({ params: { slug } }) {
     <article className="mt-16 px-2 2xl:px-12 flex flex-col gap-y-8">
       <Navbar/>
       {/* Featured Image */}
-      <div className="relative w-full h-96">
+      <div className="relative w-full h-[500px]">
         <Image
           src={urlForImage(insight.image.imageUrl)}
           layout="fill"

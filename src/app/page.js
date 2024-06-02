@@ -10,6 +10,7 @@ import OurInsightCard from "@/components/OurInsight";
 import Link from "next/link";
 import OurPeopleCard from "@/components/OurPeopleCard";
 import { client } from '../lib/client';
+import Svasa from "@/components/Svasa";
 
 export default function Home() {
   const [blogs, setBlogs] = useState([]);
@@ -106,7 +107,7 @@ export default function Home() {
       <Navbar />
       <HomePage />
       <div>
-        <section className="m-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <section className="m-6 mx-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {blogs.map((blog, index) => (
             <BlogCard blog={blog} key={index} />
           ))}
@@ -114,8 +115,8 @@ export default function Home() {
       </div>
 
       <div>
-        <h1 className="text-3xl font-bold text-center mt-28 mb-8 text-primary">Featured Insights</h1>
-        <section className="m-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <h1 className="text-3xl  font-bold text-center mt-28 mb-8 text-primary">Featured Insights</h1>
+        <section className="mx-24 p-4">
           {insights.map((insight, index) => (
             <OurInsightCard blog={insight} key={index} />
           ))}
@@ -137,7 +138,7 @@ export default function Home() {
           ))}
         </section>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-12">
         <Link href="/our-people">
           <button className="bg-transparent hover:bg-blue-800 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
             View All People
@@ -145,8 +146,10 @@ export default function Home() {
         </Link>
       </div>
 
+      <Svasa />
+
       {/* Chatbot Section */}
-      <div className="chatbot-container mt-10 p-4 border border-gray-300 rounded-lg">
+      {/* <div className="chatbot-container mt-10 p-4 border border-gray-300 rounded-lg">
         <form onSubmit={handleSubmit} className="flex flex-col items-center">
           <input
             type="text"
@@ -162,7 +165,7 @@ export default function Home() {
             <p>{response.answer}</p>
           </div>
         )}
-      </div>
+      </div> */}
 
       <Footer />
     </div>
