@@ -18,11 +18,14 @@ const OurPeople = () => {
         role,
         "slug": slug.current,
         description,
+        order,
         "imageUrl": image.asset->url
       }`;
 
       const peopleData = await client.fetch(query);
-      setPeople(peopleData);
+      const sortedPeople = peopleData.sort((a,b)=> a.order - b.order);
+      console.log("Fetched people data:", sortedPeople)
+      setPeople(sortedPeople);
     };
 
     fetchPeople();

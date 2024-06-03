@@ -49,6 +49,7 @@ export default function Home() {
           name,
           "imageUrl": image.asset->url,
           role,
+          order,
           description,
           "slug": slug.current
         }`;
@@ -63,13 +64,14 @@ export default function Home() {
 
         const featuredPosts = posts.filter(post => post.featured);
         const featuredFromInsights = insights.filter(insight => insight.featured);
+        const sortedPeople = people.sort((a,b)=> a.order - b.order);
 
         console.log('Featured Posts:', featuredPosts);
         console.log('Featured Insights:', featuredFromInsights);
 
         setBlogs(featuredPosts);
         setInsights(featuredFromInsights);
-        setPerson(people);
+        setPerson(sortedPeople);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
